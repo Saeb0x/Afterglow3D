@@ -27,9 +27,15 @@
     <ClInclude Include="src\Afterglow3D\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Afterglow3D\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Afterglow3D\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Afterglow3D\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
