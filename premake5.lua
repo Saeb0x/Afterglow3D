@@ -7,6 +7,10 @@ workspace "Afterglow3D"
 		"Distribution"
 	}
 
+	-- Only supported by Visual Studio---
+	startproject "Sandbox"
+	-------------------------------------
+
 outputDir = "%{cfg.system}-%{cfg.buildcfg}-%{cfg.architecture}"
 
 project "Afterglow3D"
@@ -34,10 +38,6 @@ project "Afterglow3D"
 		defines {
 			"AG_PLATFORM_WINDOWS",
 			"AG_BUILD_DLL"
-		}
-
-		postbuildcommands {
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputDir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
