@@ -7,7 +7,7 @@ workspace "Afterglow3D"
 		"Distribution"
 	}
 
-	-- Only supported by Visual Studio---
+	-- Only supported by Visual Studio --
 	startproject "Sandbox"
 	-------------------------------------
 
@@ -21,13 +21,17 @@ project "Afterglow3D"
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputDir .. "/%{prj.name}")
 
+	pchheader "agPCH.h"
+	pchsource "Afterglow3D/src/agPCH.cpp"
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs {
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/src"
 	}
 
 	filter "system:windows"

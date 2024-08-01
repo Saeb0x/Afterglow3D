@@ -1,3 +1,4 @@
+#include "agPCH.h"
 #include "Application.h"
 
 namespace Afterglow3D
