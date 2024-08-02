@@ -9,3 +9,9 @@
 #else
 	#error Afterglow only supports Windows!
 #endif
+
+#ifdef AG_ENABLE_ASSERTS
+	#define AG_ENGINE_ASSERT(x, ...) { if(!(x)) { AG_ENGINE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define AG_ENGINE_ASSERT(x, ...)
+#endif

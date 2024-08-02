@@ -11,6 +11,8 @@
 #include <vector>
 #include <unordered_map>
 
+#include "Afterglow3D/Log.h"
+
 #ifdef AG_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
