@@ -1,16 +1,36 @@
 #include "agPCH.h"
 #include "Application.h"
 
+#include "Log.h"
+
 #include <GLFW/glfw3.h>
 
 namespace Afterglow3D
 {
+#define BIND_EVENT_FUNC(x) std::bind(&x, this, std::placeholders::_1)
+
 	Application::Application() 
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FUNC(Application::OnEvent));
 	}
 
 	Application::~Application() {}
+
+	void Application::OnEvent(Event& e)
+	{
+
+		EventDispatcher disp(e);
+		disp.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNC(Application::OnWindowClose));
+
+		AG_ENGINE_INFO(e.ToString());
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& event)
+	{
+		m_IsRunning = false;
+		return true;
+	}
 
 	void Application::Run()
 	{

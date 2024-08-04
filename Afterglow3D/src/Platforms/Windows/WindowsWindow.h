@@ -18,6 +18,7 @@ namespace Afterglow3D
 		unsigned int GetWidth() const override { return m_Data.m_Width; }
 		unsigned int GetHeight() const override { return m_Data.m_Height; }
 
+		inline void SetEventCallback(const EventCallbackFunc& callback) override { m_Data.m_EventCallback = callback; }
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 	private:
@@ -32,6 +33,8 @@ namespace Afterglow3D
 			unsigned int m_Width;
 			unsigned int m_Height;
 			bool m_VSync;
+
+			EventCallbackFunc m_EventCallback;
 		};
 
 		WindowData m_Data;

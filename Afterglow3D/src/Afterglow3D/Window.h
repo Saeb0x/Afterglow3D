@@ -1,7 +1,9 @@
 #pragma once 
 
 #include "agPCH.h"
-#include "Afterglow3D/Core.h"
+
+#include "Core.h"
+#include "Events/Event.h"
 
 namespace Afterglow3D
 {
@@ -19,6 +21,9 @@ namespace Afterglow3D
 	class AFTERGLOW3D_API Window
 	{
 	public:
+
+		using EventCallbackFunc = std::function<void(Event&)>;
+
 		static Window* Create(const WindowProps& props = WindowProps());
 		virtual ~Window() = default;
 
@@ -28,6 +33,7 @@ namespace Afterglow3D
 		virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeight() const = 0;
 
+		virtual void SetEventCallback(const EventCallbackFunc& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 	};

@@ -1,6 +1,10 @@
 #pragma once
 
 #include "Core.h"
+
+#include "Events/Event.h"
+#include "Events/WindowEvent.h"
+
 #include "Window.h"
 
 namespace Afterglow3D
@@ -12,7 +16,9 @@ namespace Afterglow3D
 		virtual ~Application();
 
 		void Run();
+		void OnEvent(Event& e);
 	private:
+		bool OnWindowClose(WindowCloseEvent& event);
 		std::unique_ptr<Window> m_Window;
 		bool m_IsRunning = true;
 	};

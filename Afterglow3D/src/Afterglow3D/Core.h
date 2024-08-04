@@ -12,6 +12,10 @@
 
 #ifdef AG_ENABLE_ASSERTS
 	#define AG_ENGINE_ASSERT(x, ...) { if(!(x)) { AG_ENGINE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define AG_ASSERT(x, ...)	{ if(!(x)) { AG_APP_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define AG_ENGINE_ASSERT(x, ...)
+	#define AG_APP_ASSERT(x, ...)	
 #endif
+
+#define BIT(x) (1 << x)
