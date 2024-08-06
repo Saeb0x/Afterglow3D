@@ -43,6 +43,8 @@ namespace Afterglow3D
 		{
 			return GetCategoryFlags() & category;
 		}
+
+		bool IsHandled() const { return m_Handled; }
 	protected:
 		bool m_Handled = false;
 	};

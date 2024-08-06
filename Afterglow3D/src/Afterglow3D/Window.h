@@ -2,7 +2,6 @@
 
 #include "agPCH.h"
 
-#include "Core.h"
 #include "Events/Event.h"
 
 namespace Afterglow3D
@@ -21,7 +20,6 @@ namespace Afterglow3D
 	class AFTERGLOW3D_API Window
 	{
 	public:
-
 		using EventCallbackFunc = std::function<void(Event&)>;
 
 		static Window* Create(const WindowProps& props = WindowProps());

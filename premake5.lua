@@ -65,14 +65,17 @@ project "Afterglow3D"
             "AG_DEBUG",
             "AG_ENABLE_ASSERTS"
         }
+        buildoptions "/MDd"
         symbols "On"
 
      filter "configurations:Release"
         defines "AG_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
      filter "configurations:Distribution"
         defines "AG_DISTRIBUTION"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -111,12 +114,15 @@ project "Sandbox"
             "AG_DEBUG",
             "AG_ENABLE_ASSERTS"
         }
+        buildoptions "/MDd"
         symbols "On"
 
      filter "configurations:Release"
         defines "AG_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
      filter "configurations:Distribution"
         defines "AG_DISTRIBUTION"
+        buildoptions "/MD"
         optimize "On"
